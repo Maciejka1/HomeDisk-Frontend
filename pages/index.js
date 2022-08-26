@@ -7,8 +7,9 @@ export default function Home() {
       initial={{opacity: 0}}
       animate={{opacity: 1, transition: {duration: 2}}}
       exit={{opacity: 0}}
+      className="min-h-[95vh]"
     >
-      <div className="h-[80vh] pt-20 w-screen flex flex-wrap items-center justify-center gap-10">
+      <div className="h-[80vh] pt-20 w-screen flex flex-wrap items-center justify-center gap-10 px-2">
         <div className="flex flex-col gap-2">
           <h1 className="font-bold text-5xl sm:text-6xl md:text-8xl text-[#ff3c83]">
             Welcome to <br/> HomeDisk!

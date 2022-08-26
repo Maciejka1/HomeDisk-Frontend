@@ -16,13 +16,13 @@ export default function Nav() {
                 <FaBars/>
             </div>
         </div>
-        <nav className="pr-2 flex flex-col items-center bg-[#222] h-screen fixed md:justify-between md:w-full md:h-12 md:right-0 md:left-0 md:flex-row md:border-b-[1px] border-[#444]" style={{right: navControl}}> 
-        <Link href="/">
-            <a className="md:h-full md:flex items-center">
-                <img src="/images/icons/favicon.svg" alt="logo" className="h-20 md:h-full p-1"/>
-                <h1 className="md:ml-2 text-lg">HomeDisk</h1>
-            </a>
-        </Link>
+        <nav className="flex flex-col justify-between items-center px-5  bg-[#222] h-screen fixed md:px-0 md:pr-2 md:justify-between md:left-0 md:w-full md:h-12 md:flex-row md:border-b-[1px] border-[#444]" style={{right: navControl}}> 
+            <Link href="/">
+                <a className="md:h-full md:flex items-center">
+                    <img src="/images/icons/favicon.svg" alt="logo" className="h-20 md:h-full p-1"/>
+                    <h1 className="md:ml-2 text-lg">HomeDisk</h1>
+                </a>
+            </Link>
             <ul className="flex flex-col gap-5 font-semibold text-lg md:flex-row">
                 <Link href="/">
                     <a onClick={shouldResize}>
@@ -40,7 +40,7 @@ export default function Nav() {
                     </a>
                 </Link>
             </ul>
-            <div className="text-4xl md:hidden text-white" onClick={() => setNavControl('-100%')}>
+            <div className="text-4xl md:hidden text-white mb-20 md:mb-0" onClick={() => setNavControl('-100%')}>
                 <FaTimes/>
             </div>
         </nav>

@@ -16,6 +16,9 @@ body{
 nav{
   transition: all 500ms ease;
 }
+a:hover{
+  text-decoration: underline;
+}
 .container{
   @apply max-w-7xl
 }
