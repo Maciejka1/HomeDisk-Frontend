@@ -16,11 +16,13 @@ export default function Nav() {
                 <FaBars/>
             </div>
         </div>
-        <nav className="pr-2 flex flex-col items-center bg-[#222] h-screen fixed md:justify-between md:w-full md:h-12 md:right-0 md:left-0 md:flex-row border-b-[1px] border-[#444]" style={{right: navControl}}> 
-        <div className="md:h-full md:flex items-center">
-            <img src="/images/icons/favicon.svg" alt="logo" className="h-20 md:h-full p-1"/>
-            <h1 className="md:ml-2 text-lg">HomeDisk</h1>
-        </div>
+        <nav className="pr-2 flex flex-col items-center bg-[#222] h-screen fixed md:justify-between md:w-full md:h-12 md:right-0 md:left-0 md:flex-row md:border-b-[1px] border-[#444]" style={{right: navControl}}> 
+        <Link href="/">
+            <a className="md:h-full md:flex items-center">
+                <img src="/images/icons/favicon.svg" alt="logo" className="h-20 md:h-full p-1"/>
+                <h1 className="md:ml-2 text-lg">HomeDisk</h1>
+            </a>
+        </Link>
             <ul className="flex flex-col gap-5 font-semibold text-lg md:flex-row">
                 <Link href="/">
                     <a onClick={shouldResize}>

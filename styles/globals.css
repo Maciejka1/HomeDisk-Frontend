@@ -1,10 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
 body{
   background: #222222;
   color: white;
+}
+nav{
+  transition: all 500ms ease;
 }
 .container{
   @apply max-w-7xl
