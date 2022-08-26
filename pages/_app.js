@@ -3,7 +3,7 @@ import '../styles/globals.css'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return(
     <>
       <Head>
@@ -12,8 +12,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/images/icons/favicon.ico" />
       </Head>
       <Nav/>
-        <AnimatePresence>
-          <Component {...pageProps} />
+        <AnimatePresence mode="wait">
+          <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       <Footer/>
     </>
