@@ -20,7 +20,7 @@ export default function Login() {
   return (
     <motion.div
     initial={{opacity: 0}}
-    animate={{opacity: 1, transition: {duration: 2}}}
+    animate={{opacity: 1}}
     exit={{opacity: 0}}
     >
         <div className='flex justify-center items-center h-screen w-screen '>
