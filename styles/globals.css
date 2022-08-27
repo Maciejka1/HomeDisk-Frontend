@@ -16,6 +16,9 @@ body{
 nav{
   transition: all 500ms ease;
 }
+a{
+  cursor: pointer;
+}
 a:hover{
   text-decoration: underline;
 }
