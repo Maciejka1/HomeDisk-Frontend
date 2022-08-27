@@ -13,6 +13,12 @@ export default function Login() {
             }
         })
     }
+    React.useEffect(() => {
+        const checkLogin = localStorage.getItem("isLoggedIn")
+        if (checkLogin === "logged"){
+            router.push("/")
+        }
+    })
     const submit = () => {
       if(loginData.passwd === loginData.repeatPasswd && loginData.passwd){
         router.push('/')

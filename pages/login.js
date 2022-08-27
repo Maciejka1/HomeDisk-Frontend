@@ -5,6 +5,12 @@ import {AiFillEyeInvisible, AiFillEye} from 'react-icons/ai'
 export default function Login() {
     const router = useRouter()
     const [loginData, setLoginData] = React.useState({login: "", passwd: ""})
+    React.useEffect(() => {
+        const checkLogin = localStorage.getItem("isLoggedIn")
+        if (checkLogin === "logged"){
+            router.push("/")
+        }
+    })
     const handleChange = (event) => {
         setLoginData(prevData => {
             return {
@@ -15,8 +21,9 @@ export default function Login() {
     }
     const submit = () => {
       loginData.login === "" && setError("Email is empty") 
-      localStorage.setItem("isLoggedIn", true)
+      localStorage.setItem("isLoggedIn", "logged")
       router.push("/")
+      router.reload("/")
     }
     const [isVisible, setIsVisible] = React.useState(false)
     const [error, setError] = React.useState()

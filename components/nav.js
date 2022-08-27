@@ -1,12 +1,18 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 export default function Nav() {
+    const router = useRouter()
     const [navControl, setNavControl] = React.useState("-15rem")
     const [width, setWidth] = React.useState()
+    const [login, setLogin] = React.useState(false)
+
     React.useEffect(()=>{
         setWidth(window.screen.availWidth)
+        setLogin(localStorage.getItem("isLoggedIn"))
     }, [])
+    
     let shouldResize = width <= 768 ? () => setNavControl('-100%') : undefined
 
     return (
@@ -34,11 +40,21 @@ export default function Nav() {
                         <li>Dashboard</li>
                     </a>
                 </Link>
-                <Link href="/login">
-                    <a onClick={shouldResize}>
-                        <li>Login</li>
+                {
+                    login === "logged" ? 
+                    <a onClick={() => {
+                        localStorage.clear("isLoggedIn")
+                        router.reload("/")
+                    }}>
+                        <li>Log out</li>
                     </a>
-                </Link>
+                    : 
+                    <Link href="/login">
+                        <a onClick={shouldResize}>
+                            <li>Log in</li>
+                        </a>
+                    </Link>
+                }
             </ul>
             <div className="text-4xl md:hidden text-white mb-20 md:mb-0" onClick={() => setNavControl('-100%')}>
                 <FaTimes/>
