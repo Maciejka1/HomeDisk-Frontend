@@ -14,9 +14,12 @@ export default function Login() {
         })
     }
     const submit = () => {
-        router.push('/')
+      loginData.login === "" && setError("Email is empty") 
+      localStorage.setItem("isLoggedIn", true)
+      router.push("/")
     }
     const [isVisible, setIsVisible] = React.useState(false)
+    const [error, setError] = React.useState()
   return (
     <motion.div
     initial={{opacity: 0}}
@@ -25,7 +28,7 @@ export default function Login() {
     >
         <div className='flex justify-center items-center h-screen w-screen '>
             <div>
-                <h1 className='font-bold text-3xl'>Sign in</h1>
+                <h1 className='font-bold text-3xl'>Log in</h1>
                 <div className='flex flex-col gap-2 text-xl'>
                     <input 
                         type="email"
@@ -48,6 +51,7 @@ export default function Login() {
                             {isVisible ? <AiFillEyeInvisible/> : <AiFillEye/>}
                         </div>
                     </div>
+                    <p className='text-red-500'>{error}</p>
                     <button onClick={submit}>Log in</button>
                 </div>
             </div>

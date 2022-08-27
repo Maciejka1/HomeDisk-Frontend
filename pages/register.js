@@ -14,11 +14,12 @@ export default function Login() {
         })
     }
     const submit = () => {
-        if(loginData.passwd === loginData.repeatPasswd){
-          router.push('/')
-        } else{
-          setError("Passwords aren't the same")
-        }
+      if(loginData.passwd === loginData.repeatPasswd && loginData.passwd){
+        router.push('/')
+      } else{
+        setError("Passwords aren't the same")
+      }
+      loginData.login === "" && setError("Email is empty") 
     }
     const [isVisible, setIsVisible] = React.useState(false)
     const [error, setError] = React.useState()
