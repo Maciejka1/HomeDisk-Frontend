@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import {AiFillEyeInvisible, AiFillEye} from 'react-icons/ai'
+import api from './api/axios-conf'
 export default function Login() {
     const router = useRouter()
     const [loginData, setLoginData] = React.useState({login: "", passwd: ""})
@@ -22,6 +23,7 @@ export default function Login() {
     const submit = () => {
       loginData.login === "" && setError("Email is empty") 
       localStorage.setItem("isLoggedIn", "logged")
+      
       router.push("/")
       router.reload("/")
     }
