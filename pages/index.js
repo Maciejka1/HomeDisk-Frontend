@@ -2,10 +2,13 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import React from "react"
 import { FaArrowRight } from "react-icons/fa"
+import axios from "axios"
 export default function Home() {
+
   const [login, setLogin] = React.useState()
   React.useEffect(() => {
     setLogin(localStorage.getItem("isLoggedIn"))
+
   })
   return (
     <motion.div

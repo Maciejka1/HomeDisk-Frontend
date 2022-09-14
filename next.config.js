@@ -4,4 +4,17 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+
+module.exports = () => {
+  const rewrites = () => {
+    return [
+      {
+        source: "/api",
+        destination: "http://0.0.0.0:8080",
+      },
+    ];
+  };
+  return {
+    rewrites,
+  }
+};
