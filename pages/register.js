@@ -37,7 +37,7 @@ export default function Login() {
     >
         <div className='flex justify-center items-center h-screen w-screen '>
             <div>
-                <h1 className='font-bold text-3xl'>Register</h1>
+                <h1 className="font-bold text-4xl sm:text-5xl md:text-7xl text-[#ff3c83] mb-5">Register</h1>
                 <div className='flex flex-col gap-2 text-xl'>
                     <input 
                         type="email"

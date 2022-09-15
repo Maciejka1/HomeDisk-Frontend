@@ -2,7 +2,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import {AiFillEyeInvisible, AiFillEye} from 'react-icons/ai'
-import api from './api/axios-conf'
 export default function Login() {
     const router = useRouter()
     const [loginData, setLoginData] = React.useState({login: "", passwd: ""})
@@ -37,7 +36,7 @@ export default function Login() {
     >
         <div className='flex justify-center items-center h-screen w-screen '>
             <div>
-                <h1 className='font-bold text-3xl'>Log in</h1>
+                <h1 className="font-bold text-4xl sm:text-5xl md:text-7xl text-[#ff3c83] mb-5">Log in</h1>
                 <div className='flex flex-col gap-2 text-xl'>
                     <input 
                         type="email"

@@ -25,3 +25,10 @@ a:hover{
 .container{
   @apply max-w-7xl
 }
+button{
+  background-color: #ff3c83;
+  border-radius: 100px;
+}
+button:hover{
+  background-color: #dd1a61;
+}

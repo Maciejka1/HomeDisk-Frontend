@@ -8,7 +8,6 @@ export default function Home() {
   const [login, setLogin] = React.useState()
   React.useEffect(() => {
     setLogin(localStorage.getItem("isLoggedIn"))
-
   })
   return (
     <motion.div
@@ -59,20 +58,20 @@ export default function Home() {
                  </div>
                </motion.a>
              </Link>
-             <Link href="/register">
-               <motion.a className="border-[1px] border-sky-700 rounded-xl p-16"
-               initial={{y: 50, opacity: 0}}
-               animate={{y: 0, opacity: 1, transition: {duration: 1, delay: 1}}}
-               exit={{y: 50, opacity: 0}}
-               >
-                 <div className="flex flex-col gap-0 hover:gap-2">
-                   <p className="font-bold flex items-center gap-2 hover:gap-4 text-xl">Register <FaArrowRight/></p>
-                   <p>Create a new account</p>
-                 </div>
-               </motion.a>
-             </Link>
            </>
           }
+          <Link href="/config">
+              <motion.a className="border-[1px] border-sky-700 rounded-xl p-16"
+              initial={{y: 50, opacity: 0}}
+              animate={{y: 0, opacity: 1, transition: {duration: 1, delay: 1}}}
+              exit={{y: 50, opacity: 0}}
+              >
+                <div className="flex flex-col gap-0 hover:gap-2">
+                  <p className="font-bold flex items-center gap-2 hover:gap-4 text-xl">Config <FaArrowRight/></p>
+                  <p>Configure ports</p>
+                </div>
+              </motion.a>
+            </Link>
         </div>
       </div>
        
