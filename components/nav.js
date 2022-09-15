@@ -43,7 +43,7 @@ export default function Nav() {
                 {
                     login === "logged" ? 
                     <a onClick={() => {
-                        localStorage.clear("isLoggedIn")
+                        localStorage.removeItem("isLoggedIn")
                         router.reload("/")
                     }}>
                         <li>Log out</li>

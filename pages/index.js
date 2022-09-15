@@ -33,7 +33,7 @@ export default function Home() {
           {
             login === "logged" ? 
             <Link href="/dashboard">
-              <motion.a className="border-[1px] border-sky-700 rounded-xl p-16"
+              <motion.a className="border-[1px] border-[#51b74f] rounded-xl p-16"
               initial={{y: 50, opacity: 0}}
               animate={{y: 0, opacity: 1, transition: {duration: 1, delay: 1}}}
               exit={{y: 50, opacity: 0}}
@@ -45,25 +45,23 @@ export default function Home() {
               </motion.a>
             </Link>
             : 
-            <>
-             <Link href="/login">
-               <motion.a className="border-[1px] border-[#51b74f] rounded-xl p-16"
-               initial={{y: -50, opacity: 0}}
-               animate={{y: 0, opacity: 1, transition: {duration: 1, delay: 0.5}}}
-               exit={{y: -50, opacity: 0}}
-               >
-                 <div className="flex flex-col gap-0 hover:gap-2">
-                   <p className="font-bold flex items-center gap-2 hover:gap-4 text-xl">Sign in <FaArrowRight/></p>
-                   <p>Log in to your account</p>
-                 </div>
-               </motion.a>
-             </Link>
-           </>
-          }
+            <Link href="/register">
+              <motion.a className="border-[1px] border-[#51b74f] rounded-xl p-16"
+              initial={{y: -50, opacity: 0}}
+              animate={{y: 0, opacity: 1, transition: {duration: 1, delay: 1}}}
+              exit={{y: -50, opacity: 0}}
+              >
+                <div className="flex flex-col gap-0 hover:gap-2">
+                  <p className="font-bold flex items-center gap-2 hover:gap-4 text-xl">Register <FaArrowRight/></p>
+                  <p>Register a new account</p>
+                </div>
+              </motion.a>
+            </Link>
+        }
           <Link href="/config">
               <motion.a className="border-[1px] border-sky-700 rounded-xl p-16"
               initial={{y: 50, opacity: 0}}
-              animate={{y: 0, opacity: 1, transition: {duration: 1, delay: 1}}}
+              animate={{y: 0, opacity: 1, transition: {duration: 1, delay: 0.5}}}
               exit={{y: 50, opacity: 0}}
               >
                 <div className="flex flex-col gap-0 hover:gap-2">

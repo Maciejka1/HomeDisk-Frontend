@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import {AiFillEyeInvisible, AiFillEye} from 'react-icons/ai'
+import { getToken, setToken } from './api/utils/token'
 export default function Login() {
     const router = useRouter()
     const [loginData, setLoginData] = React.useState({login: "", passwd: "", repeatPasswd: ""})
@@ -14,10 +15,12 @@ export default function Login() {
         })
     }
     React.useEffect(() => {
+
         const checkLogin = localStorage.getItem("isLoggedIn")
         if (checkLogin === "logged"){
             router.push("/")
         }
+
     })
     const submit = () => {
       if(loginData.passwd === loginData.repeatPasswd && loginData.passwd){
